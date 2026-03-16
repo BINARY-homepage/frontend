@@ -116,7 +116,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     const loginUser = getLoginUser();
 
     if (token && loginUser && loginUser.id === postData.user?.id) {
-      document.getElementById("post-actions").classList.remove("hidden");
+      const postActions = document.getElementById("post-actions");
+      if (postActions) postActions.classList.remove("hidden");
     }
 
     bindPostActions(id);
